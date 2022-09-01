@@ -1,0 +1,44 @@
+<template>
+    <div class="slds-m-around_medium">
+        <lightning-Card title="Create a Task" icon-name="standard:task">
+            <lightning-input
+                value={subject}
+                label="Subject"
+                onchange={handleSubjectChange}>
+            </lightning-input>
+
+            <lightning-combobox
+                name="type"
+                label="Type"
+                value={type}
+                options={typePicklistValues}
+                placeholder="Select Type"
+                onchange={handleTypeChange}>
+            </lightning-combobox>
+
+            <lightning-combobox
+                name="priority"
+                label="Priority"
+                value={priority}
+                options={priorityPicklistValues}
+                placeholder="Select Priority"
+                onchange={handlePriorityChange}>
+            </lightning-combobox>
+
+            <lightning-textarea
+                value={description}
+                label="Description"
+                onchange={handleDescriptionChange}>
+            </lightning-textarea>
+
+            <lightning-input type="date" name="activityDate" label="Enter a date" value={activityDate} ></lightning-input>
+
+            <lightning-button-icon icon-name="utility:add"
+                variant="border-filled"
+                alternative-text="Add Task"
+                onclick={addTask}>
+            </lightning-button-icon>
+            
+        </lightning-Card>
+    </div>
+</template>
